@@ -1,29 +1,37 @@
 import React, { useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StatusBar } from 'react-native';
 
-import { style } from './styles';
+import { ButtonIcon } from '../../components/ButtonIcon/index';
+
+import { styles } from './styles';
 import IllustrationImg from '../../assets/illustration.png'
 
 export function SignIn() {
-   const [text, setText] = useState('');
-
 
    return(
-      <View style={style.container}>
+      <View style={styles.container}>
+         <StatusBar 
+            barStyle="light-content" 
+            backgroundColor="transparent"
+            translucent
+         />
          <Image 
             source={IllustrationImg} 
-            style={style.image}
+            style={styles.image}
+            resizeMode="stretch"
          />
-         <View style={style.content}>
-            <Text style={style.title}>
+         <View style={styles.content}>
+            <Text style={styles.title}>
                Organize {`\n`}
                suas jogatinas {`\n`}
                facilmente {`\n`}
             </Text>
-            <Text style={style.subtitle}>
+            <Text style={styles.subtitle}>
                Crie grupos para jogar seus games {`\n`}
                favoritos com seus amigos
             </Text>
+
+            <ButtonIcon title="Entrar com Discord" activeOpacity={0.5} onPress={() => alert('Me passa um Pix')}/>
          </View>
       </View>
    )
