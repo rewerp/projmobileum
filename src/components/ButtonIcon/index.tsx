@@ -21,5 +21,5 @@ export function ButtonIcon({ title, ...rest }: Props) {
             {title}
          </Text>
       </TouchableOpacity>
-   )
+   );
 }
